@@ -1,0 +1,22 @@
+{
+    "name": "silverengine/ghost",
+    "authors": [
+        {
+            "name": "silver engine Team",
+            "email": "enginesilver@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "psr-4" : {
+            "Silver\\Ghost\\" : "src/"
+        }
+    },
+
+    "autoload-dev":{
+        "psr-4": {
+            "Tests\\" : "test/"
+        }
+    }
+}

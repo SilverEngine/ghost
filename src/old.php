@@ -20,6 +20,7 @@
 /**
  * Template
  */
+
 class Template //s implements RenderInterface
 {
     private $_file;
