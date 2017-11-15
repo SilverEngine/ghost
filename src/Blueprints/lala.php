@@ -1,0 +1,5 @@
+<?php
+
+implements lala {
+    
+}
