@@ -3,7 +3,6 @@
 <p align="center"><img src="https://thumb.ibb.co/fDOcRG/goodone.jpg"></p>
 
 
-## SILVER ENGINE FRAMEWORK
 ## GHOST TEMPLATE ENGINE
 
 SilverEngine is a powerful PHP Dynamical MVC framework built for developers who need a simple and elegant toolkit to create powerfull full-featured web applications.
