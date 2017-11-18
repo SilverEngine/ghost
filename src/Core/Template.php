@@ -54,14 +54,13 @@ class Template
     public function render($file, $data)
     {
         if(!file_exists($file . $this->_ext)) throw new NotFoundException("Error File $file " . $this->_ext . " was not found.");
-        $this->_file = $file . $this->_ext;
+        $this->_file = file_get_contents($file . $this->_ext);
         $this->_data = $data;
 
 
+        $this->_file  = $this->_components->variables("/\(\(.*\)\)/",$this->_file, "/\(|\)/" , $this->_data);
+        $this->_file  = $this->_components->statments($this->_file, $this->_data);
 
-        $render = $this->_components->variables("/\(\(.*\)\)/",$this->_file, "/\(|\)/" , $this->_data);
-        //$render = $this->_components->loops("/\(\(.*\)\)/",$this->_file, "/\(|\)/" , $data);
-
-        return $render;
+        return $this->_file;
     }
 }

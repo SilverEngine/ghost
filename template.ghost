@@ -3,17 +3,28 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>(( modelData.title ))</title>
+	<title>(( title ))</title>
 	<link rel="stylesheet" href="">
 </head>
 <body>
 
-        <li>(( name ))</li>
-        <li>(( age ))</li>
+<div class="ghsot">
+	<ul>
+		<h1>(( INFO ))</h1>
+		<li>(( info.name ))</li>
+		<li>(( info.age ))</li>
+		<li>(( info.country ))</li>
+		<li>(( info.city ))</li>
+		<li>(( info.phone ))</li>
+	</ul>
+</div>
+
+#if 24 == 24
+
+	<h3>You are correct !</h3>
+	<h3>You are correct !</h3>
+
+#endif
 
 </body>
 </html>
-
-$ghost = new Template;
-
-echo $ghost->render($file, $data);
