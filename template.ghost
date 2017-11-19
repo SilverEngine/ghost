@@ -38,5 +38,12 @@
 	#endif
 
 
+	#if (50 /5) == 10
+		correct operation
+	#else
+		error wrong operation
+	#endif
+
+
 </body>
 </html>

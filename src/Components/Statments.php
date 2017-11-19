@@ -12,7 +12,7 @@ class Statments
 
 
 
-        $body = preg_replace_callback("/(?s)#if.*#endif/", function ($match) {
+        $body = preg_replace_callback("/(?s)#if.*#endif/U", function ($match) {
 
             //
             $conditions = explode("\n", $match[0]);
@@ -98,7 +98,7 @@ class Statments
         }, $body);
 
 
-        return $body;
+        echo $body;
 
     }
 }
