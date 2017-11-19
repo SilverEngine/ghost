@@ -12,3 +12,10 @@ $tmp = new Template("views/welcome.ghost.php", array("name" => 'bla'));
 echo $tmp->render();
 
 
+
+
+globalarray();
+
+name = "azaz";
+
+
