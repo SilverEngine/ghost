@@ -10,7 +10,7 @@ $ghost = new \Silver\Ghost\Core\Template($components);
 echo $ghost->render("template", array(
 
     "info"=>array(
-        "name"    => "lotfio",
+        "name"    => "moha",
         "age"     => 24,
         "country" => "algeria",
         "city"    => "algiers",

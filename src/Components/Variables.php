@@ -16,7 +16,7 @@ namespace Silver\Ghost\Components;
 
 class Variables
 {
-    public function render($params)
+    public function compile($params)
     {
         $pattern = $params[0];
         $file    = $params[1];

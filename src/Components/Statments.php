@@ -4,9 +4,13 @@ namespace Silver\Ghost\Components;
 
 class Statments
 {
-    public function render($params)
+
+    public function compile($params)
     {
         $body = $params[0];
+        define("data",$params[1]);
+
+
 
         $body = preg_replace_callback("/(?s)#if.*#endif/", function ($match) {
 
@@ -25,6 +29,8 @@ class Statments
             $else       = key(preg_grep("/^#else$/", $conditions));
             $end        = key(preg_grep("/^#endif$/", $conditions));
 
+            $output     = array();
+
             // if condition
 
             if (preg_match("/=|==|===|!==|!=|<>|<=|>=|<|>|&&|and|or| (\|\|) |\+|\*|\-|\//i", $conditions[$ifPosition])) {
@@ -39,18 +45,18 @@ class Statments
                     if ($else) {
                         for ($i = $start; $i < $else; $i++) {
 
-                            echo $conditions[$i];
+                            $output[] = $conditions[$i];
                         }
 
-                        return ;
+                        return empty($output) ? null : implode("\n", $output);
                     }
 
 
                     for ($i = $start; $i < $end; $i++) {
-                        echo  $conditions[$i];
+                        $output[] =  $conditions[$i];
                     }
 
-                    return;
+                    return empty($output) ? null : implode("\n", $output);
 
 
                 } else {
@@ -68,10 +74,10 @@ class Statments
 
                             for ($i = $start; $i < $stop; $i++) {
 
-                                echo $conditions[$i];
+                                $output[] =  $conditions[$i];
                             }
 
-                            return;
+                            return empty($output) ? null : implode("\n", $output);
                         }
 
                     }
@@ -80,11 +86,11 @@ class Statments
                     // else condition
                     if ($else) {
                         for ($i = $else + 1; $i < $end; $i++) {
-                            echo $conditions[$i];
+                            $output[] =  $conditions[$i];
                         }
                     }
 
-                    return;
+                    return empty($output) ? null : implode("\n", $output);
                 }
             }
 

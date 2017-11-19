@@ -19,12 +19,24 @@
 	</ul>
 </div>
 
-#if 24 == 24
 
-	<h3>You are correct !</h3>
-	<h3>You are correct !</h3>
+	#if data['info']['name'] === 'lotfi'
 
-#endif
+		<h1>You are Lotfio</h1>
+
+	elseif# data['info']['name'] == "moha"
+
+		<h5>moooha</h5>
+
+	elseif# data['info']['name'] == "nina"
+
+		<h3>You are nina</h3>
+
+	#else
+		<h1>You are (( info.name ))</h1>
+
+	#endif
+
 
 </body>
 </html>

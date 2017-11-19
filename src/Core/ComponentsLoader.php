@@ -10,6 +10,6 @@ class ComponentsLoader implements ComponentsLoaderInterface
     {
         $component = 'Silver\Ghost\Components\\' . ucfirst($method);
 
-        return (new $component)->render($params);
+        return (new $component)->compile($params);
     }
 }
